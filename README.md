@@ -9,7 +9,9 @@ some web services
 
 #### Check response by code
 
-```http-check <url> code <http-code>```
+```
+http-check <url> code <http-code>
+```
 
 return:  
   0 - if match ok  
@@ -17,20 +19,29 @@ return:
   
 example:  
   
-```http-check http://localhost:7183/app code 200```  
+```
+http-check http://localhost:7183/app code 200
+```  
 
 #### Check response content by substring
-```http-check <url> substring <substring>```  
+```
+http-check <url> substring <substring>
+```
+  
 return:  
   0 - if match ok  
   1 - substring not found  
     
 example:  
   
-```http-check http://localhost:7183/app substring "42"```  
+```
+http-check http://localhost:7183/app substring "42"
+```  
 
 #### Diagnostic mode  
-```http-check <url> diag <substring>```  
+```
+http-check <url> diag <substring>
+```  
   
 return:  
 
@@ -38,13 +49,26 @@ return:
     
 example:  
 
-```http-check http://localhost:7183/app substring "42"```  
+```
+http-check http://localhost:7183/app substring "42"
+```
+
+#### Usage with zabbix agent
+
+edit `zabbix_agentd.conf`:
+
+```
+UserParameter=checkHealth,httptool.exe http://localhost:7183 code 200
+```
+  
   
 ### Build
 
 Go: 1.9, not tested with older versions  
 
-```go build main.go```
+```
+go build main.go
+```
 
 #### Support Windows XP
 
