@@ -2,7 +2,8 @@
 
 Simple tool for checking http requests by response code or substring
 
-Originally created as tool for [zabbix agent](http://www.zabbix.com) agent when you need to check some web services
+Originally created as tool for [zabbix agent](http://www.zabbix.com) agent at Windows environment when you need to check 
+some web services
 
 ### Usage
 
