@@ -2,7 +2,7 @@
 
 Simple tool for checking http requests by response code or substring
 
-Originally created as tool for zabbix agent when you need to check some web services
+Originally created as tool for [zabbix agent](http://www.zabbix.com) agent when you need to check some web services
 
 ### Usage
 
@@ -10,37 +10,38 @@ Originally created as tool for zabbix agent when you need to check some web serv
 
 ```http-check <url> code <http-code>```
 
-return:
-  0 - if match ok
-  1 - if return code is different
-
-example:
+return:  
+  0 - if match ok  
+  1 - if return code is different  
   
-```http-check http://localhost:7183/app code 200```
+example:  
+  
+```http-check http://localhost:7183/app code 200```  
 
 #### Check response content by substring
-```http-check <url> substring <substring>```
-return:
-  0 - if match ok
-  1 - substring not found
+```http-check <url> substring <substring>```  
+return:  
+  0 - if match ok  
+  1 - substring not found  
+    
+example:  
   
-example:
+```http-check http://localhost:7183/app substring "42"```  
 
-```http-check http://localhost:7183/app substring "42"```
-
-#### Diagnostic mode
-```http-check <url> diag <substring>```
-
-return:
-  verbose response about what's going on
+#### Diagnostic mode  
+```http-check <url> diag <substring>```  
   
-example:
+return:  
 
-```http-check http://localhost:7183/app substring "42"```
+  verbose response about what's going on  
+    
+example:  
+
+```http-check http://localhost:7183/app substring "42"```  
   
 ### Build
 
-Go: 1.9, not tested with older versions
+Go: 1.9, not tested with older versions  
 
 ```go build main.go```
 
