@@ -14,13 +14,29 @@ return:
   0 - if match ok
   1 - if return code is different
 
+example:
+  
+```http-check http://localhost:7183/app code 200```
+
 #### Check response content by substring
 ```http-check <url> substring <substring>```
 return:
   0 - if match ok
   1 - substring not found
   
-example
+example:
+
+```http-check http://localhost:7183/app substring "42"```
+
+#### Diagnostic mode
+```http-check <url> diag <substring>```
+
+return:
+  verbose response about what's going on
+  
+example:
+
+```http-check http://localhost:7183/app substring "42"```
   
 ### Build
 
